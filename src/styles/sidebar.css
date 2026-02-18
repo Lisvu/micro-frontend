@@ -1,0 +1,97 @@
+/* Sidebar 样式 */
+.sidebar-container {
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0;
+  font-size: 0;
+}
+
+.logo-text {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.sidebar-menu {
+  border-right: none !important;
+}
+
+.sidebar-menu :deep(.ant-menu-item),
+.sidebar-menu :deep(.ant-menu-submenu-title) {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sidebar-menu :deep(.ant-menu-item:hover),
+.sidebar-menu :deep(.ant-menu-submenu-title:hover) {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.sidebar-menu :deep(.ant-menu-item-selected) {
+  background-color: #1890ff !important;
+  color: white !important;
+}
+
+.sidebar-menu :deep(.anticon) {
+  margin-right: 8px;
+}
+
+.sidebar-user-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.user-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-icon {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.user-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .sidebar-container {
+    position: fixed !important;
+    left: -220px;
+    top: 0;
+    height: 100vh;
+    z-index: 999;
+    transition: left 0.2s;
+  }
+
+  .sidebar-container.ant-layout-sider-collapsed {
+    left: 0;
+  }
+}
